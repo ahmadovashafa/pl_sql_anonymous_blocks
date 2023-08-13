@@ -1,0 +1,108 @@
+
+Tasks PL/SQL Anonymous Blocks
+1.Task: Write an anonymous block that declares a variable v_greeting and initializes it with "Hello, World!". The block should then output the value of v_greeting.
+
+declare
+   v_greeting VARCHAR2(50) := 'Hello world';
+begin
+      dbms_output.put_line(v_grreting);
+end;
+
+2.Task: Declare two number variables, v_num1 and v_num2. Initialize v_num1 with 10. Within the block, assign v_num2 the value of v_num1 multiplied by 5 and then output it.
+
+declare 
+v_num1 number :=10;
+v_num2 number:=v_num1*5;
+begin
+    dbms_output.put_line(v_num2);
+end;
+
+3.Task: Declare two variables, v_length and v_width, and initialize them with 5 and 10 respectively. Calculate the area of a rectangle using these and output the result.
+
+declare 
+v_length number:=10;
+v_width number:=5;
+begin 
+    dbms_output.put_line(v_length*v_width);
+end;
+
+4.Task: Declare a date variable v_today and initialize it with the current date. Add 7 days to this date and output the result.
+
+declare 
+v_today date:=sysdate;
+v_new_day date;
+begin 
+
+v_new_day:=v_today+7;
+dbms_output.put_line(v_new_day);
+
+end;
+
+5.Task: Declare two string variables, v_firstName and v_lastName. Initialize them with your first and last name. Concatenate them to display a full name and then output it.
+
+declare 
+v_first_name varchar2(20):='Shafa';
+v_last_name varchar2(20):='Ahmadova';
+begin
+dbms_output.put_line(v_first_name ||''|| v_last_name);
+end;
+
+6.Task: Declare a number variable v_age. If v_age is greater than 18, print "Adult". Otherwise, print "Minor".
+
+declare 
+v_age number:=25;
+begin
+if v_age>18 then
+dbms_output.put_line('Adult');
+else
+dbms_output.put_line('Minor');
+end if;
+end;
+
+7.Task: Declare a number variable v_counter and initialize it with 1. Write a loop that outputs the numbers from 1 to 5 using this variable.
+
+declare 
+v_counter number:=1;
+begin
+for v_counter in 1..5 loop
+dbms_output.put_line(v_counter);
+end loop;
+end;
+
+8.Task: Declare a number variable v_dividend and v_divisor. Initialize v_divisor with 0. Try dividing v_dividend by v_divisor and handle any exceptions to print "Cannot divide by zero".
+
+    
+declare
+v_dividend number:=20;
+v_divisor number:=0;
+v_result number;
+
+begin
+v_result:=v_dividend/v_divisor;
+dbms_output.put_line(v_result);
+exception
+when zero_divide then
+dbms_output.put_line('can not divide by zero');
+end;
+
+9.Task: Declare a string variable v_text and initialize it with "oracle". Convert the string to uppercase and then output the result.
+
+declare
+v_text varchar2(20):='oracle';
+begin
+dbms_output.put_line(upper(v_text));
+end;
+
+10.Task: Write an anonymous block that declares a number variable v_outerVar and initializes it with 100. Within this block, declare another nested anonymous block that declares a variable v_innerVar and initializes it with 200. Output both variables from the inner block.
+
+declare
+v_outerVar number:=100;
+begin
+dbms_output.put_line('outervarible'||v_outerVar);
+
+declare 
+v_innerVar number:=200;
+begin
+dbms_output.put_line('Innervariable'|| v_innerVar);
+end;
+end;
